@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title%}Pain your wall{% endblock %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <p style="color:red;">
+            Please correct the error {{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+		<form action="" method="post">{% csrf_token %}
+			<legend>Paint the wall</legend>
+
+			<label>Title</label>
+                  {{ form.title.errors }}
+			<input type="text" name="title"  placeholder="what should it be called?">
+			<span class="help-block">Title of the painting.</span>
+
+			<label for="id_text">Paint below</label>
+                  {{ form.text.errors }}
+			<textarea class="span12" name="text" rows="10"></textarea>
+
+			<button id="button" type="submit" class="btn" value="Submit">Submit</button>
+		</form>
+
+{% endblock %}

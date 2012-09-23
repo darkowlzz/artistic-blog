@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+        <p class="lead">Login</p><hr/><br/>
+		<form class="form-horizontal" action="" method="post">{% csrf_token %}
+			<div class="control-group">
+				<label class="control-label" for="username">Artist</label>
+				<div class="controls">
+                {{ form.username.errors }}
+					<input type="text" name="username" placeholder="artistname">
+				</div>
+			</div>
+            
+			<div class="control-group">
+				<label class="control-label" for="password">Secret Code</label>
+				<div class="controls">
+                {{ form.password.errors }}
+					<input type="password" name="password" placeholder="code">
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn">Sign in</button>
+				</div>
+			</div>
+		</form>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="http://localhost/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://localhost/static/bootstrap/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+        <title>{% block title %}{% endblock %}</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+                <!-- sidebar -->
+				<div class="span3 offset1">
+					<hr/>
+					<img src="http://localhost/static/pajama.jpg" height=50 width=50 class="img-rounded">
+				</div>
+                <!-- end of sidebar -->
+
+                <!-- main body -->
+				<div class="span7">
+					<hr/>
+					<blockquote class="pull-right">
+						<p>Here goes some quotes</p>
+						<small>By No one <cite title="Source Title">from Nowhere</cite></small>
+					</blockquote>
+					<br/><br/><br/>
+					<hr/>
+
+                    {% block content %}{% endblock %}
+
+				</div>
+                <!-- end of main body -->
+			</div>
+		</div>
+	</body>
+</html>
