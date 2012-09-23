@@ -7,8 +7,10 @@
 		<p class="lead">{{ title }}</p>
 		<hr/>
 		<br/>
-		<p>
-			{{ p.text }}
-		</p>
+        <blockquote>
+    		<p>	{{ p.text }} </p>
+            <br/>
+            <small>{{ p.user.username }} at<cite title="time"> {{ p.time }}</cite></small>
+        </blockquote>
 
 {% endblock %}

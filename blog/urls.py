@@ -5,4 +5,5 @@ urlpatterns = patterns('blog.views',
     url(r'artists/$', 'list_artists'),
     url(r'blog/(?P<title>\w+)/$', 'show_post'),
     url(r'artist/(?P<name>\w+)/$', 'artist'),
+    url(r'paintings/$', 'list_paintings'),
 )

@@ -27,7 +27,8 @@ def send_post(request):
 
 
 def list_artists(request):
-    artists = User.objects.all()[1:]
+    artists = User.objects.all()
+
     return render_to_response('artist_list.html', locals(), context_instance=RequestContext(request, processors=[custom_proc]))
 
 def artist(request, name):
@@ -38,3 +39,11 @@ def show_post(request, title):
     p = Post.objects.get(title=title)
     title = title.replace("_", " ")
     return render_to_response('read.html', locals(), context_instance=RequestContext(request, processors=[custom_proc]))
+
+def list_paintings(request):
+    paintings = Post.objects.order_by('-time')
+#    for i in paintings:
+#        i.title = i.title.replace("_", " ")
+
+    return render_to_response('paintings.html', locals(), context_instance=RequestContext(request, processors=[custom_proc]))
+

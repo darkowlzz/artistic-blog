@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Paintings{% endblock %}
+
+{% block content %}
+
+<table class="table table-hover">
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+        </tr>
+    {% for painting in paintings %}
+        <tr>
+            <td><a href="/blog/blog/{{ painting.title }}/">{{ painting.title }}</a></td>
+            <td><a href="/blog/artist/{{ painting.user.username }}/">{{ painting.user.username }}</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
