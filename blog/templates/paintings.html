@@ -12,7 +12,7 @@
     {% for painting in paintings %}
         <tr>
             <td><a href="/blog/blog/{{ painting.title }}/">{{ painting.title }}</a></td>
-            <td><a href="/blog/artist/{{ painting.user.username }}/">{{ painting.user.username }}</a></td>
+            <td><a href="/{{ painting.user.username }}/">{{ painting.user.username }}</a></td>
         </tr>
     {% endfor %}
 </table>

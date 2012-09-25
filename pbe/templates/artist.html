@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ artist.username }}{% endblock %}
+
+{% block content %}
+
+<img src="http://t1.gstatic.com/images?q=tbn:ANd9GcTPx9jF6ey9qMEzTrvvTb04Q6FfDEeUVw-KKxgZRVsaBSqlpP4L-w&t=1" width=100 height=100 class="img-polaroid"><br/>
+<p>Artist: {{ artist.username }} <br/>
+    Address: {{ artist.email }}
+</p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Artists{% endblock %}
+
+{% block content %}
+
+    {% for artist in artists %}
+        <li><a href="/{{ artist.username }}/" class="btn btn-link">{{ artist.username }}</a></li>
+    {% endfor %}
+
+{% endblock %}

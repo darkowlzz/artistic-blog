@@ -43,17 +43,6 @@ def title_conversion(title):
     return ''.join(i for i in title)
 
 
-def list_artists(request):
-    artists = User.objects.all()
-
-    return render_to_response('artist_list.html', locals(), context_instance=RequestContext(request, processors=[custom_proc]))
-
-
-def artist(request, name):
-    artist = User.objects.get(username=name)
-    return render_to_response('artist.html', locals(), context_instance=RequestContext(request, processors=[custom_proc]))
-
-
 def show_post(request, title):
     """
         Gets the required post and displays it

@@ -12,23 +12,30 @@
 	<body>
 		<div class="container-fluid">
 			<div class="row-fluid">
-                
-                {% if request.user.is_authenticated %}
                 <!-- sidebar -->
 				<div class="span3 offset1">
 					<hr/>
-                        <p><a href="/{{ request.user.username }}/"><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcTPx9jF6ey9qMEzTrvvTb04Q6FfDEeUVw-KKxgZRVsaBSqlpP4L-w&t=1" height=50 width=50 class="img-polaroid"></a> {{ request.user.username }}</p>
+                    {% if request.user.is_authenticated %}
+                     <p><a href="/{{ request.user.username }}/"><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcTPx9jF6ey9qMEzTrvvTb04Q6FfDEeUVw-KKxgZRVsaBSqlpP4L-w&t=1" height=50 width=50 class="img-polaroid"></a> {{ request.user.username }}</p>
+                    {% endif %}
 					<form class="form-search">
 						<div class="input-append">
 							<input type="text" class="span9 search-query">
 							<button type="submit" class="btn">Dig</button>
 						</div>
 					</form>
+                    {% if request.user.is_authenticated %}
                     <a class="btn btn-link" href="/blog/submit/">Paint</a>
+                    {% endif %}
                     <a class="btn btn-link" href="/blog/paintings/">Paintings</a>
                     <a class="btn btn-link" href="/artists/">Artists</a>
+                    {% if request.user.is_authenticated %}
                     <a class="btn btn-link" href="/auth/logout/">Logout</a>
-                    <br/><hr/>
+                    {% else %}
+                    <a class="btn btn-link" href="/auth/login/">Login</a>
+                    {% endif %}
+                    <hr/>
+                    <br/>
 					<a href="/"><img src="http://localhost/static/pajama.jpg" height=50 width=50 class="img-rounded"></a>
 				</div>
                 <!-- end of sidebar -->
@@ -38,7 +45,7 @@
 					<hr/>
 					<blockquote class="pull-right">
 						<p>Here goes some quotes</p>
-						<small>By No one<cite title="Source Title">from Nowhere</cite></small>
+						<small>By No one <cite title="Source Title">from Nowhere</cite></small>
 					</blockquote>
 					<br/><br/><br/>
 					<hr/>
@@ -47,18 +54,6 @@
 
 				</div>
                 <!-- end of main body -->
-                {% else %}
-                <div class="hero-unit">
-					<h1>PajamaBlog</h1>
-					<p>bloggers in pajama</p>
-					<p>
-						<a href="/auth/register/" class="btn btn-primary btn-large">
-							Start your pajama blog
-						</a>
-					</p>
-				</div>
-                {% endif %}
-
 			</div>
 		</div>
 	</body>
