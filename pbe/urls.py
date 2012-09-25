@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^blog/', include('blog.urls')),
     url(r'^auth/', include('auth.urls')),
     # Examples:
-    # url(r'^$', 'pbe.views.home', name='home'),
+    url(r'^$', home),
     # url(r'^pbe/', include('pbe.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
